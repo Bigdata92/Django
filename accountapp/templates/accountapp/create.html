@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div style="text-align: center">
+        <form action="{% url 'accountapp:create' %}" method="post"> # accountapp:create로 연결해라
+            {% csrf_token %}
+            {{ form }} # form_class = UserCreationForm 를 html로 적용
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+
+{% endblock %}
