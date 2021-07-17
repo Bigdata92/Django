@@ -3,17 +3,17 @@
         <h1 class="pragmatic_logo">Pragmatic</h1>
     </div>
     <div>
-        <span>
-            nav1
-        </span>
-        <span>
-            nav2
-        </span>
-        <span>
-            nav3
-        </span>
-        <span>
-            nav4
-        </span>
+        <span>nav1</span>
+        <span>nav2</span>
+        <span>nav3</span>
+        {% if not user.is_authenticated %} <!--user가 login X--!>
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+            <span>login</span>
+        </a>
+        {% else %}
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+            <span>logout</span>
+        </a>
+        {% endif %}
     </div>
 </div>
