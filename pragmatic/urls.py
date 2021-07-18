@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')), # account 주소로 접근
+    path('profiles/', include('profileapp.urls')),
 ]
