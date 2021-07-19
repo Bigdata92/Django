@@ -7,10 +7,15 @@
             <p>
                 {{ target_user.date_joined }} <!-- 언제 가입 했는지-->
             </p>
+            
+            <img src="{{ target_user.profile.image.url }}" alt="" style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem">
 
             {% if target_user.profile %}
             <h2 style="font-family: 'NanumSquareB'">
                 {{ target_user.profile.nickname }}
+                <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+                    edit
+                </a>
             </h2>
         `   {% else %}
             <a href="{% url 'profileapp:create' %}">
@@ -19,6 +24,10 @@
                 </h2>
             </a>
             {% endif %}
+
+            <h5 style="margin-bottom: 3rem">
+                {{ target_user.profile.message }}
+            </h5>
 
             {% if target_user.profile %}
             <a href="{% url 'accountapp:update' pk=user.pk %}">
