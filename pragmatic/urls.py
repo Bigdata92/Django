@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('accountapp.urls')),  # account 주소로 접근
     path('profiles/', include('profileapp.urls')),
     path('articles/', include('articleapp.urls')),
+    path('comments/', include('commentapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # pragmatic settigs 적은 모든 것들 가져올 수 있음
