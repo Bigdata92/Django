@@ -9,6 +9,9 @@
         <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
             <span>Projects</span>
         </a>
+        <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav">
+            <span>Subscription </span>
+        </a>
         {% if not user.is_authenticated %} <!--user가 login X--!>
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
             <span>login</span>
