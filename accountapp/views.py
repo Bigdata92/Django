@@ -22,7 +22,7 @@ has_ownership = [
 class AccountCreateView(CreateView):
     model = User # 장고 기본 제공 model
     form_class = UserCreationForm # basic Template
-    success_url = reverse_lazy('accountapp:hello_world') # reverse() class 사용시 reverse_lazy()
+    success_url = reverse_lazy('accountapp:detail') # reverse() class 사용시 reverse_lazy()
     template_name = 'accountapp/create.html' # form 어떻게 볼지
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
